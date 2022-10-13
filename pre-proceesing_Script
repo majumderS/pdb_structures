@@ -1,0 +1,14 @@
+To remove standard amino acids from the protein-RNA complex
+
+for f in *;
+do echo "processing $f";
+python3 pdb_delresname.py -ALA,ARG,ASN,ASP,ASX,CYS,GLU,GLN,GLX,GLY,HIS,ILE,LEU,LYS,MET,PHE,PRO,SER,THR,TRP,TYR,VAL,MSE $f > ${f%.*}.1.pdb;
+done
+
+To remove HETATM which might contain water and non-standard residues such as MSE (selenium methionione) :
+
+grep -v HETATM 1r9f.1.pdb > 1r9f.1_clean.pdb 
+
+
+
+

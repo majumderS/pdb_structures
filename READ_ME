@@ -1,0 +1,3 @@
+README
+
+This directory is a database of available siRNA structures downloaded from RCSB PDB. Most of the siRNA were in complex with some or other form of proteins. The processed folder contains files from whom protein molecule has been removed. The clean files consist of only the siRNA Molecule with all HETATMS removed. The other files contains scripts for processing the siRNA raw files .
