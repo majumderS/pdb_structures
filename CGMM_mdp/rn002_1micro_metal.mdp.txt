@@ -1,0 +1,62 @@
+integrator               = md
+tinit                    = 0.0
+dt                       = 0.005
+nsteps                   = 500000000 ; this should realy be 50-100 ps
+
+
+nstxout                  = 50000
+nstvout                  = 50000
+nstfout                  = 50000
+nstlog                   = 50000
+nstenergy                = 50000
+nstxtcout                = 50000
+
+
+
+nstlist                  = 10
+
+ns_type                  = Simple
+
+pbc                      = no
+
+
+
+
+coulombtype              = user
+;rcoulomb_switch          = 0.0
+
+
+
+vdw_type                 = user
+
+;rvdw_switch              = 0.0
+
+
+
+; OPTIONS FOR WEAK COUPLING ALGORITHMS = 
+; Temperature coupling   = 
+tcoupl                   = berendsen 
+; Groups to couple separately = 
+tc-grps                  = Protein ion
+; Time constant (ps) and reference temperature (K) = 
+tau_t                    = 0.3 0.3 
+ref_t                    = 300 300 
+
+
+; Pressure coupling      = 
+Pcoupl                   = no
+Pcoupltype               = isotropic
+; Time constant (ps), compressibility (1/bar) and reference P (bar) = 
+tau_p                    = 1.0
+compressibility          = 5e-5
+ref_p                    = 1.0  
+
+; GENERATE VELOCITIES FOR STARTUP RUN = 
+gen_vel                  = no
+gen_temp                 = 300
+gen_seed                 = 473529
+
+; OPTIONS FOR BONDS     = 
+constraints              = none 
+
+
