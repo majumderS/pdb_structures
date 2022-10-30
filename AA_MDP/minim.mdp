@@ -1,0 +1,30 @@
+; ions.mdp - used as input into grompp to generate ions.tpr
+; Parameters describing what to do, when to stop and what to save
+integrator  = steep         ; Algorithm (steep = steepest descent minimization)
+emtol       = 100.0        ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
+emstep      = 0.001          ; Minimization step size
+nsteps      = 50000        ; Maximum number of (minimization) steps to perform
+
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions only for CHARMM27
+;nstlist = 10
+;cutoff-scheme = Verlet
+;ns_type = grid
+;coulombtype = PME
+;rcoulomb = 1.2
+;rvdw = 1.2
+;pbc = xyz
+;define = -DFLEXIBLE
+
+
+;constraints = h-bonds
+cutoff-scheme = Verlet
+vdwtype = cutoff
+vdw-modifier = force-switch
+;rlist = 1.0
+rvdw = 1.2
+rvdw-switch = 1.0
+coulombtype = PME
+rcoulomb = 1.2
+DispCorr = no
+;define = -DFLEXIBLE
